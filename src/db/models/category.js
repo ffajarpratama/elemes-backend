@@ -8,4 +8,6 @@ module.exports = (sequelize, DataTypes) => {
   Category.associate = models => {
     Category.hasMany(models.Course);
   }
+
+  return Category;
 }

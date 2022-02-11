@@ -9,4 +9,6 @@ module.exports = (sequelize, DataTypes) => {
   Course.associate = models => {
     Course.belongsTo(models.Category);
   }
+
+  return Course;
 }
