@@ -15,6 +15,7 @@ const auth = require('./auth');
 const adminCourse = require('./admin/course');
 const adminCategory = require('./admin/category');
 const adminUser = require('./admin/user');
+const adminStatistic = require('./admin/statistic');
 // const user = require('./users');
 
 /* GET home page. */
@@ -38,5 +39,9 @@ router.use('/api/admin/category', authMiddlewares, adminCategory);
 // ADMIN USER ENDPOINT
 router.use('/api/admin/user', authMiddlewares, adminUser);
 // END ADMIN USER ENDPOINT
+
+// ADMIN STATISTICS ENDPOINT
+router.use('/api/admin/statistic', authMiddlewares, adminStatistic);
+// ADMIN STATISTICS ENDPOINT
 
 module.exports = router;
