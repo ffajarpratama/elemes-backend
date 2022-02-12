@@ -17,7 +17,7 @@ const isAuthenticated = (req, res, next) => {
     jwt.verify(token, accessKey, (err, user) => {
         if (err) {
             return res.status(403).json({
-                message: 'Invalid token!'
+                message: 'Invalid token, please log in again!'
             });
         }
         req.user = user;

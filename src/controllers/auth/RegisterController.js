@@ -8,11 +8,10 @@ const validateRegisterInput = require('../../helpers/validations/register');
 
 class RegisterController {
     static async register(req, res) {
-        // return res.send(req.body);
         //form validation
         const { errors, isValid } = validateRegisterInput(req.body);
-        //check validation
 
+        //check validation
         if (!isValid) {
             return res.status(400).json(errors);
         }
@@ -24,7 +23,7 @@ class RegisterController {
         }
 
         if (req.file) {
-            const maxSize = 1 * 1024 * 1024;
+            const maxSize = 1024 * 1024;
             const ext = path.extname(req.file.originalname);
 
             if (ext !== '.jpg' && ext !== '.jpeg' && ext !== '.png') {
@@ -44,7 +43,7 @@ class RegisterController {
             } else {
                 cloudinary.uploader.upload(req.file.path, {
                     folder: 'elemes-backend/users/',
-                    public_id: Date.now().toString() + '_' + req.body.email,
+                    public_id: req.body.email,
                     overwrite: true
                 }).then((result) => {
                     User.create({

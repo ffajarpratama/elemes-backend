@@ -19,8 +19,17 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      price: {
+      description: {
         type: Sequelize.STRING
+      },
+      cloudinaryPublicId: {
+        type: Sequelize.STRING
+      },
+      cloudinarySecureURL: {
+        type: Sequelize.STRING
+      },
+      price: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

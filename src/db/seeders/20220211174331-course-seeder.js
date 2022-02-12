@@ -9,7 +9,8 @@ module.exports = {
       courses.push({
         CategoryId: categories[i]['id'],
         name: `Course #${i + 1}`,
-        price: '150000',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        price: 150000,
         createdAt: new Date(),
         updatedAt: new Date()
       });
