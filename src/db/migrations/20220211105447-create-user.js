@@ -18,6 +18,12 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
+      cloudinaryPublicId: {
+        type: Sequelize.STRING
+      },
+      cloudinarySecureURL: {
+        type: Sequelize.STRING
+      },
       isAdmin: {
         type: Sequelize.BOOLEAN,
         defaultValue: false

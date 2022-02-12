@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
+    cloudinaryPublicId: DataTypes.STRING,
+    cloudinarySecureURL: DataTypes.STRING,
     isAdmin: DataTypes.BOOLEAN
   }, { paranoid: true });
 
