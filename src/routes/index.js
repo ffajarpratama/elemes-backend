@@ -11,12 +11,21 @@ const authMiddlewares = [
 ];
 
 //import routes
+// AUTH ROUTES
 const auth = require('./auth');
+// END AUTH ROUTES
+
+// ADMIN ROUTES
 const adminCourse = require('./admin/course');
 const adminCategory = require('./admin/category');
 const adminUser = require('./admin/user');
 const adminStatistic = require('./admin/statistic');
-// const user = require('./users');
+// END ADMIN ROUTES
+
+// USER ROUTES
+const userCourse = require('./user/course');
+const userCategory = require('./user/category');
+// END USER ROUTES
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -28,20 +37,32 @@ router.get('/', function (req, res, next) {
 router.use('/api/auth', auth);
 // END AUTHENTICATION ENDPOINT
 
-// ADMIN COURSE ENDPOINT
+// ADMIN ENDPOINTS
+// admin course endpoint
 router.use('/api/admin/course', authMiddlewares, adminCourse);
-// END ADMIN COURSE ENDPOINT
+// end admin course endpoint
 
-// ADMIN CATEGORY ENDPOINT
+// admin category endpoint
 router.use('/api/admin/category', authMiddlewares, adminCategory);
-// END ADMIN CATEGORY ENDPOINT
+// end admin category endpoint
 
-// ADMIN USER ENDPOINT
+// admin user endpoint
 router.use('/api/admin/user', authMiddlewares, adminUser);
-// END ADMIN USER ENDPOINT
+// end admin user endpoint
 
-// ADMIN STATISTICS ENDPOINT
+// admin statistic endpoint
 router.use('/api/admin/statistic', authMiddlewares, adminStatistic);
-// ADMIN STATISTICS ENDPOINT
+// end admin statistic
+// END ADMIN ENDPOINTS
+
+// USER ENDPOINTS
+// user category endpoint
+router.use('/api/user/category', authMiddlewares[0], userCategory);
+// end user category endpoint
+
+// user course endpoint
+router.use('/api/user/course', authMiddlewares[0], userCourse);
+// end user course endpoint
+// END USER ENDPOINTS
 
 module.exports = router;

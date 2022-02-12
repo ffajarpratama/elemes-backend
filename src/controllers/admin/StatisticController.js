@@ -7,13 +7,15 @@ class StatisticController {
         const freeCourseCount = await Course.findAndCountAll({
             where: { price: 0 }
         });
+
         const statistic = {
             'Total User Count': userCount,
             'Total Course Count': courseCount,
-            'Total Free Course Count': freeCourseCount.count
+            'Total Free Course Count': freeCourseCount.count,
         }
+
         return res.status(200).json(statistic);
     }
 }
 
-module.exports = StatisticController
+module.exports = StatisticController;

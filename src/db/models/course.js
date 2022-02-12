@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     cloudinaryPublicId: DataTypes.STRING,
     cloudinarySecureURL: DataTypes.STRING,
+    rating: DataTypes.INTEGER,
   });
 
   Course.associate = models => {

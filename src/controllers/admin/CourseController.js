@@ -71,7 +71,8 @@ class CourseController {
                 description: req.body.description,
                 cloudinaryPublicId: result.public_id,
                 cloudinarySecureURL: result.secure_url,
-                price: parseInt(req.body.price)
+                price: parseInt(req.body.price),
+                rating: parseInt(req.body.rating)
             }).then((course) => {
                 return res.status(201).json({
                     message: 'Course added!',
@@ -151,7 +152,8 @@ class CourseController {
                 description: req.body.description,
                 cloudinaryPublicId: result.public_id,
                 cloudinarySecureURL: result.secure_url,
-                price: parseInt(req.body.price)
+                price: parseInt(req.body.price),
+                rating: parseInt(req.body.rating)
             }, {
                 where: { id: req.params.id }
             }).then((course) => {

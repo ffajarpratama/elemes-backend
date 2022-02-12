@@ -11,6 +11,7 @@ module.exports = {
         name: `Course #${i + 1}`,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         price: 150000,
+        rating: Math.floor(Math.random() * (5 - 2 + 1) + 2),
         createdAt: new Date(),
         updatedAt: new Date()
       });
