@@ -179,11 +179,13 @@ class CourseController {
             });
         }
 
-        const filename = course.cloudinaryPublicId.split('/').pop();
-        const folderName = course.cloudinaryPublicId.replace(filename, '').slice(0, -1);
+        if (course.cloudinaryPublicId && course.cloudinarySecureURL) {
+            const filename = course.cloudinaryPublicId.split('/').pop();
+            const folderName = course.cloudinaryPublicId.replace(filename, '').slice(0, -1);
 
-        await cloudinary.uploader.destroy(course.cloudinaryPublicId);
-        cloudinary.api.delete_folder(folderName);
+            await cloudinary.uploader.destroy(course.cloudinaryPublicId);
+            cloudinary.api.delete_folder(folderName);
+        }
 
         course.destroy().then(() => {
             res.status(200).json({

@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Category.associate = models => {
-    Category.hasMany(models.Course);
+    Category.hasMany(models.Course, { onDelete: 'cascade', hooks: true });
   }
 
   return Category;

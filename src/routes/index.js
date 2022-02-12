@@ -13,6 +13,7 @@ const authMiddlewares = [
 //import routes
 const auth = require('./auth');
 const adminCourse = require('./admin/course');
+const adminCategory = require('./admin/category');
 // const user = require('./users');
 
 /* GET home page. */
@@ -28,5 +29,9 @@ router.use('/api/auth', auth);
 // ADMIN COURSE ENDPOINT
 router.use('/api/admin/course', authMiddlewares, adminCourse);
 // END ADMIN COURSE ENDPOINT
+
+//ADMIN CATEGORY ENDPOINT
+router.use('/api/admin/category', authMiddlewares, adminCategory);
+// END ADMIN CATEGORY ENDPOINT
 
 module.exports = router;
